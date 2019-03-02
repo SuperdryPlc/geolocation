@@ -1,0 +1,24 @@
+{
+    "name": "superdry/geolocation",
+    "type": "library",
+    "description": "Geolocation class that connects to Google Maps API",
+    "keywords": ["geolocation", "google", "maps", "api", "php"],
+    "homepage": "https://github.com/SuperdryPlc/geolocation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rob Wilson"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.16"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "superdry\\geolocation\\": "src/"
+        }
+    }
+}
