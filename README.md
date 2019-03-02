@@ -1,6 +1,5 @@
 # Geolocation Class
 [![Latest Stable Version](http://img.shields.io/packagist/v/superdry/geolocation.svg)](https://packagist.org/packages/superdry/geolocation)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/superdry/geolocation/blob/master/LICENSE)
 
 ## Table of Contents
 
