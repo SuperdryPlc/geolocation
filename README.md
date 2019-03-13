@@ -26,8 +26,7 @@ Then include Composer's generated vendor/autoload.php to enable autoloading:
 
 ```sh
 require 'vendor/autoload.php';
-
-use superdry/geolocation
+use superdry\geolocation\GeolocationService;
 ```
 
 ### example
@@ -42,8 +41,8 @@ $streetNumber = '1';
 $city = 'Gent';
 $zip = '1';
 $country = 'belgium';
-
-$result = Geolocation::getCoordinates(
+$geolocation = new GeolocationService();
+$result = $geolocation->getCoordinates(
     $street,
     $streetNumber,
     $city,
@@ -59,8 +58,8 @@ $result = Geolocation::getCoordinates(
 ``` php
 $latitude = 51.0363935;
 $longitude = 3.7121008;
-
-$result = Geolocation::getAddress(
+$geolocation = new GeolocationService();
+$result = $geolocation->getAddress(
     $latitude,
     $longitude
 );

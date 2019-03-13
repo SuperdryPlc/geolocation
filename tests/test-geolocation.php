@@ -3,8 +3,7 @@
 namespace superdry\geolocation\tests;
 
 use PHPUnit\Framework\TestCase;
-
-use superdry\geolocation\Geolocation;
+use superdry\geolocation\GeolocationService;
 
 class GeolocationTest extends TestCase
 {
@@ -13,7 +12,7 @@ class GeolocationTest extends TestCase
     public function __construct($name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $this->api = new Geolocation();
+        $this->api = new GeolocationService();
     }
 
     public function testGettingLatitudeAndLongitudeFromAddress()

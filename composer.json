@@ -2,7 +2,6 @@
     "name": "superdry/geolocation",
     "type": "library",
     "description": "Geolocation class that connects to Google Maps API",
-    "keywords": ["geolocation", "google", "maps", "api", "php"],
     "homepage": "https://github.com/SuperdryPlc/geolocation",
     "license": "MIT",
     "authors": [

@@ -2,16 +2,13 @@
 
 namespace superdry\geolocation;
 
-/**
- * Geolocation
- */
-class Geolocation
+class GeolocationService
 {
     // API URL
     const API_URL = 'maps.googleapis.com/maps/api/geocode/json';
 
-    private $api_key;
-    private $https = true;
+    protected $api_key;
+    protected $https = true;
 
     public function __construct($api_key = null)
     {
@@ -25,7 +22,7 @@ class Geolocation
      * @param $latitude
      * @param $longitude
      * @return mixed
-     * @throws GeolocationException
+     * @throws \Exception
      */
     public function getAddress($latitude, $longitude)
     {
@@ -37,7 +34,7 @@ class Geolocation
      * @param $latitude
      * @param $longitude
      * @return array
-     * @throws GeolocationException
+     * @throws \Exception
      */
     public function getAddresses($latitude, $longitude)
     {
@@ -82,12 +79,12 @@ class Geolocation
     /**
      * @param array $parameters
      * @return mixed
-     * @throws GeolocationException
+     * @throws \Exception
      */
     protected function doCall($parameters = [])
     {
         if (!function_exists('curl_init')) {
-            throw new GeolocationException("This method requires cURL (http://php.net/curl), it seems like the extension isn't installed.");
+            throw new \Exception("This method requires cURL (http://php.net/curl), it seems like the extension isn't installed.");
         }
 
         $url = 'https://' . self::API_URL . '?';
@@ -124,7 +121,7 @@ class Geolocation
         curl_close($curl);
 
         if ($errorNumber != '') {
-            throw new GeolocationException($errorMessage);
+            throw new \Exception($errorMessage);
         }
 
         $response = json_decode($response);
@@ -157,7 +154,7 @@ class Geolocation
      * @param  string $zip [optional]
      * @param  string $country [optional]
      * @return array
-     * @throws GeolocationException
+     * @throws \Exception
      */
     public function getCoordinates(
         $street = null,
@@ -222,8 +219,4 @@ class Geolocation
             'longitude' => '3.7094974999999999',
         ];
     }
-}
-
-class GeolocationException extends \Exception
-{
 }
